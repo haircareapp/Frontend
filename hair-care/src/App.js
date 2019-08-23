@@ -12,13 +12,12 @@ function App() {
     <div className="App">
       <nav>
         <NavLink to="/Hairstylist">Hairstylists</NavLink>{" "}
+        <NavLink to="/Login">Login/</NavLink>
         <NavLink to="/SignUp">SignUp</NavLink>
       </nav>
       <header />
       <div>
         <AppRoute />
-        {/* <SignUp />
-      <Hairstylist /> */}
       </div>
     </div>
   );
