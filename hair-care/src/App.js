@@ -9,7 +9,7 @@ import AppRoute from "./components/AppRoute";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <nav>
         <NavLink to="/Hairstylist">Hairstylists</NavLink>{" "}
         <NavLink to="/Login">Login/</NavLink>
