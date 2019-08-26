@@ -6,7 +6,7 @@ import "../Form.scss";
 import resetPhoto from "../photos/resetPhto.jpg";
 const ResetForm = ({ errors, touched, values, status }) => {
   return (
-    <div className="body">
+    <div className="main">
       <div className="hair-photo">
         <img src={resetPhoto} alt={"Hair Candy"} />
       </div>

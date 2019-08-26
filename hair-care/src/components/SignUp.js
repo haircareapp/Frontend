@@ -7,7 +7,7 @@ import "../Form.scss";
 import signupPhoto from "../photos/signupPhoto.jpg";
 const SignUpForm = ({ errors, touched, values, status }) => {
   return (
-    <div className="body">
+    <div className="main">
       <div className="hair-photo">
         <img src={signupPhoto} alt={"Hair Candy"} />
       </div>
