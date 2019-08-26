@@ -11,22 +11,22 @@ const LoginForm = ({ errors, touched, values, status }) => {
       <div className="hair-photo">
         <img src={loginPhoto} alt={"Hair Candy"} />
       </div>
-      <div className="signup-form form">
+      <div className="login-form form">
         <h1>Login</h1>
         <Form>
           <br />
           <label>
-            Username
+            Email
             <Field
               component="input"
-              type="text"
-              name="username"
-              placeholder="Username"
+              type="email"
+              name="email"
+              placeholder="Email"
             />
           </label>
           <br />
-          {touched.username && errors.username && (
-            <p className="error">{errors.username}</p>
+          {touched.email && errors.email && (
+            <p className="error">{errors.email}</p>
           )}
           <br />
           <label>
@@ -50,14 +50,14 @@ const LoginForm = ({ errors, touched, values, status }) => {
 };
 
 const formikHOC = withFormik({
-  mapPropsToValues({ username, password }) {
+  mapPropsToValues({ email, password }) {
     return {
-      username: username || "",
+      email: email || "",
       password: password || ""
     };
   },
   validationSchema: yup.object().shape({
-    username: yup.string().required("Not a good username"),
+    email: yup.string().required("Not a good email"),
     password: yup
       .string()
       .min(6, "That is the wrong password!")
@@ -65,11 +65,14 @@ const formikHOC = withFormik({
   }),
   handleSubmit(values, { resetForm }) {
     axios
-      .post("https://reqres.in/api/users", values)
+      .post(
+        "https://hair-care.herokuapp.com/api/auth/users/login",
+        (values.email, values.password)
+      )
       .then(res => {
         console.log("handleSubmit: then: res: ", res);
         resetForm();
-        alert(`Welcome back to the hair club, ${res.data.username}!`);
+        alert(`Welcome back to the hair club, ${res.data.email}!`);
       })
       .catch(err => console.error("handleSubmit: catch: err: ", err));
   }

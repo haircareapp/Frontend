@@ -100,27 +100,17 @@ const SignUpForm = ({ errors, touched, values, status }) => {
             <p className="error">{errors.copypassword}</p>
           )}
           <br />
-          {touched.userType && errors.userType && (
-            <p className="error">{errors.userType}</p>
+          {touched.stylist && errors.stylist && (
+            <p className="error">{errors.stylist}</p>
           )}
-          <Field
-            className="radio"
-            type="radio"
-            name="userType"
-            value="hairyPerson"
-          />{" "}
+          <Field className="radio" type="radio" name="stylist" value={false} />{" "}
           I am looking for a Stylist
           <br />
-          <Field
-            className="radio"
-            type="radio"
-            name="userType"
-            value="hairstylist"
-          />{" "}
-          I am a Stylist
+          <Field className="radio" type="radio" name="stylist" value={true} /> I
+          am a Stylist
           <br />
           <br />
-          <button>Sign Up</button>
+          <button type="submit">Sign Up</button>
           <p>
             Already a user? <NavLink to="/login">Login</NavLink>
           </p>
@@ -138,7 +128,7 @@ const formikHOC = withFormik({
     zipcode,
     password,
     copypassword,
-    userType
+    stylist
   }) {
     return {
       fullName: fullName || "",
@@ -146,7 +136,7 @@ const formikHOC = withFormik({
       username: username || "",
       password: password || "",
       copypassword: copypassword || "",
-      userType: userType || "",
+      stylist: stylist || "",
       zipcode: zipcode || ""
     };
   },
@@ -169,19 +159,27 @@ const formikHOC = withFormik({
       .test("passwords-match", "Passwords must match ya fool", function(value) {
         return this.parent.password === value;
       }),
-    userType: yup.string().required("Please select an option:")
+    stylist: yup.bool().oneOf([true], "Please select an option:")
   }),
   handleSubmit(values, { resetForm }) {
     axios
-      .post("https://reqres.in/api/users", values)
+      .post(
+        "https://hair-care.herokuapp.com/api/auth/register",
+        (values.email, values.password, values.stylist)
+      )
       .then(res => {
         console.log("handleSubmit: then: res: ", res);
         resetForm();
-        alert(
-          `Welcome to the hair club, ${res.data.fullName}! No matter what style you're rockin...Keep it fresh!`
-        );
+        // alert(
+        //   `Welcome to the hair club, ${
+        //     res.data.fullName
+        //   }! No matter what style you're rockin...Keep it fresh!`
+        // );
       })
-      .catch(err => console.error("handleSubmit: catch: err: ", err));
+      .catch(err => {
+        console.log(values.email, values.password, values.stylist);
+        console.error("handleSubmit: catch: err: ", err);
+      });
   }
 });
 const SignUpFormWithFormik = formikHOC(SignUpForm);
