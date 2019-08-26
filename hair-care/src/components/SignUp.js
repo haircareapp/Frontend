@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import * as yup from "yup";
 import "../Form.scss";
 import signupPhoto from "../photos/signupPhoto.jpg";
+
 const SignUpForm = ({ errors, touched, values, status }) => {
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (status) {
+      setMessage([...message, status]);
+    }
+  }, [status]);
   return (
     <div className="main">
       <div className="hair-photo">
@@ -109,6 +116,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
           <Field className="radio" type="radio" name="stylist" value={true} /> I
           am a Stylist
           <br />
+          <p className="success">{message}</p>
           <br />
           <button type="submit">Sign Up</button>
           <p>
@@ -161,23 +169,19 @@ const formikHOC = withFormik({
       }),
     stylist: yup.bool().oneOf([true], "Please select an option:")
   }),
-  handleSubmit(values, { resetForm }) {
+  handleSubmit(values, { setStatus, resetForm }) {
     axios
-      .post(
-        "https://hair-care.herokuapp.com/api/auth/register",
-        (values.email, values.password, values.stylist)
-      )
+      .post("https://haircare-backend.herokuapp.com/api/auth/register", {
+        email: values.email,
+        password: values.password,
+        stylist: values.stylist
+      })
       .then(res => {
         console.log("handleSubmit: then: res: ", res);
+        setStatus(res.data.message);
         resetForm();
-        // alert(
-        //   `Welcome to the hair club, ${
-        //     res.data.fullName
-        //   }! No matter what style you're rockin...Keep it fresh!`
-        // );
       })
       .catch(err => {
-        console.log(values.email, values.password, values.stylist);
         console.error("handleSubmit: catch: err: ", err);
       });
   }
