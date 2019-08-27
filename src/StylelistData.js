@@ -1,5 +1,4 @@
-export default [
-    {
+export const StylelistData=[{
         name: "City-West Hair",
         id: 0,
         imgUrl: "./photos/city-west.jpg",
@@ -111,3 +110,5 @@ export default [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar tellus orci, eget bibendum urna finibus eget. Mauris quis mauris imperdiet dolor scelerisque pulvinar. Aenean tristique, risus vitae cursus lobortis, tortor quam fermentum ex, sed rhoncus risus odio quis massa. Nulla malesuada ac tellus fringilla auctor. Nunc et semper enim. Nunc quis ultricies erat, at bibendum odio. Nam mauris velit, pharetra quis laoreet at, tincidunt nec ex. Cras ornare fermentum mi, vitae suscipit dui sodales a. Quisque tortor massa, lobortis vitae erat eu, rhoncus tempus sem. Etiam a mollis nibh. Pellentesque eget dolor nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus."
     }
 ]
+
+export default {StylelistData};

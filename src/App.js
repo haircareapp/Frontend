@@ -1,8 +1,6 @@
 import React from "react";
 // import logo from './logo.svg';
 import "./App.css";
-
-import { NavLink } from "react-router-dom";
 import AppRoute from "./components/AppRoute";
 import Nav from "./components/Nav";
 // import SignUp from './components/SignUp';
