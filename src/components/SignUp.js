@@ -167,7 +167,7 @@ const formikHOC = withFormik({
       .test("passwords-match", "Passwords must match ya fool", function(value) {
         return this.parent.password === value;
       }),
-    stylist: yup.bool().oneOf([true], "Please select an option:")
+    stylist: yup.bool().oneOf([true],"Please select an option:")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     axios
