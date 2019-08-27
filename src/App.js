@@ -11,7 +11,7 @@ import Nav from "./components/Nav";
 function App() {
   return (
     <div className="App container">
-     <Nav/>
+      <Nav />
       <header />
       <div>
         <AppRoute />

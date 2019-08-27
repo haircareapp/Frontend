@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
@@ -6,6 +6,12 @@ import * as yup from "yup";
 import "../Form.scss";
 import loginPhoto from "../photos/loginPhoto.jpg";
 const LoginForm = ({ errors, touched, values, status }) => {
+  const [message, setMessage] = useState("");
+  useEffect(() => {
+    if (status) {
+      setMessage([...message, status]);
+    }
+  }, [status]);
   return (
     <div className="main">
       <div className="hair-photo">
@@ -38,6 +44,8 @@ const LoginForm = ({ errors, touched, values, status }) => {
             <p className="error">{errors.password}</p>
           )}
           <br />
+          <p className="success">{message}</p>
+          <br />
           <button>Submit!</button>
           <p>
             Forgot your Password? <NavLink to="/Reset">Reset</NavLink> | Not
@@ -63,18 +71,23 @@ const formikHOC = withFormik({
       .min(6, "That is the wrong password!")
       .required()
   }),
-  handleSubmit(values, { resetForm }) {
+  handleSubmit(values, { setStatus, resetForm }) {
     axios
-      .post(
-        "https://hair-care.herokuapp.com/api/auth/users/login",
-        (values.email, values.password)
-      )
+      .post("https://haircare-backend.herokuapp.com/api/users/login", {
+        email: values.email,
+        password: values.password
+      })
       .then(res => {
         console.log("handleSubmit: then: res: ", res);
+        setStatus(res.data.message);
+        console.log(res.data.token);
         resetForm();
         alert(`Welcome back to the hair club, ${res.data.email}!`);
       })
-      .catch(err => console.error("handleSubmit: catch: err: ", err));
+      .catch(err => {
+        console.log(values.email, values.password);
+        console.error("handleSubmit: catch: err: ", err);
+      });
   }
 });
 const LoginFormWithFormik = formikHOC(LoginForm);
