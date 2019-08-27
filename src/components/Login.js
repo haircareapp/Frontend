@@ -66,14 +66,11 @@ const formikHOC = withFormik({
   },
   validationSchema: yup.object().shape({
     email: yup.string().required("Not a good email"),
-    password: yup
-      .string()
-      .min(6, "That is the wrong password!")
-      .required()
+    password: yup.string().required("That is the wrong password!")
   }),
   handleSubmit(values, { setStatus, resetForm }) {
     axios
-      .post("https://haircare-backend.herokuapp.com/api/users/login", {
+      .post("https://haircare-backend.herokuapp.com/api/auth/login", {
         email: values.email,
         password: values.password
       })
@@ -82,7 +79,7 @@ const formikHOC = withFormik({
         setStatus(res.data.message);
         console.log(res.data.token);
         resetForm();
-        alert(`Welcome back to the hair club, ${res.data.email}!`);
+        // alert(`Welcome back to the hair club, ${res.data.email}!`);
       })
       .catch(err => {
         console.log(values.email, values.password);
