@@ -9,7 +9,7 @@ const LoginForm = ({ errors, touched, values, status }) => {
   const [message, setMessage] = useState("");
   useEffect(() => {
     if (status) {
-      setMessage([...message, status]);
+      setMessage(status);
     }
   }, [status]);
   return (
@@ -80,9 +80,9 @@ const formikHOC = withFormik({
         console.log(res.data.token);
         resetForm();
         // alert(`Welcome back to the hair club, ${res.data.email}!`);
-      })
+        })
       .catch(err => {
-        console.log(values.email, values.password);
+        // console.log(values.email, values.password);
         console.error("handleSubmit: catch: err: ", err);
       });
   }

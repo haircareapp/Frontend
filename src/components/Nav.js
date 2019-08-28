@@ -16,7 +16,7 @@ export default function Nav() {
         <a href="https://pwhaircare.netlify.com/about.html">About</a>
       </div>
       <div className="nav-item">
-        <NavLink to="/Hairstylist">Hairstylists</NavLink>
+        <NavLink to="/Hairstylists">Hairstylists</NavLink>
       </div>
       <div className="nav-item">
         <NavLink to="/Login">Login</NavLink>

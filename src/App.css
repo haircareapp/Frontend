@@ -31,3 +31,14 @@
     transform: rotate(360deg);
   }
 }
+
+.hairstylist{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.copyright{
+  background: #568EA3;
+  color: white;
+  text-align: center;
+}
