@@ -53,22 +53,6 @@ function App() {
         <AppRoute stylists={stylists} />
       </div>
       <div className="user-info">
-        <h1> Users:</h1>
-        <h2>Stylist Users:</h2>
-        {stylists.map(user => (
-          <div className="user-card-info">
-            <ul key={user.id}>
-              <li>Username: {user.username}</li>
-              <li>Id: {user.id} </li>
-              <li>User Id: {user.user_id} </li>
-              <li>Image url: {user.profile_img}</li>
-              <li>About: {user.about}</li>
-              <li>Skills: {user.skills}</li>
-            </ul>
-            <br />
-            <br />
-          </div>
-        ))}
         <h2>All Users:</h2>
         <div className="user-list-info">
           <ul>
@@ -76,46 +60,6 @@ function App() {
               <li key={user.email}>Email: {user.email}</li>
             ))}
           </ul>
-        </div>
-
-        <h2>Stylist Portfolio Page:</h2>
-        <div className="user-portfolio-info">
-          <ul>
-            <li>Username: {defaultUser.username}</li>
-            <li>Id: {defaultUser.id} </li>
-            <li>User Id: {defaultUser.user_id} </li>
-            <li>Image url: {defaultUser.profile_img}</li>
-            <li>About: {defaultUser.about}</li>
-            <li>Skills: {defaultUser.skills}</li>
-          </ul>
-          {/* <div>
-            <h3>Portfolio:</h3>
-            {defaultUser.portfolio.map(port => (
-              <div>
-                <h4>Portfolio Snippet #{port.id}:</h4>
-                <ul>
-                  <li>ID:{port.id}</li>
-                  <li>Stylists ID:{port.stylists_id}</li>
-                  <li>Portfolio Image:{port.portfolio_image}</li>
-                </ul>
-              </div>
-            ))}
-          </div> */}
-          {/* <div>
-            <h3>Posts:</h3>
-            {defaultUser.posts.map(post => (
-              <div>
-                <h4>Post Snippet #{post.id}:</h4>
-                <ul>
-                  <li>ID: {post.id}</li>
-                  <li>Stylists ID: {post.stylists_id}</li>
-                  <li>Title: {post.title}</li>
-                  <li>Description: {post.description}</li>
-                  <li>Post Image: {post.posts_image}</li>
-                </ul>
-              </div>
-            ))}
-          </div> */}
         </div>
       </div>
     </div>

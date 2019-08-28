@@ -12,7 +12,7 @@ export default function AppRoute(props) {
   return (
     <div>
       {/* <Route path="/Hairstylist" render={(props) =>  <Hairstylist stylists={props.stylists} />} /> */}
-      <Route path="/Hairstylist" render={ props =>  <Hairstylist {...props} />} />
+      <Route path="/Hairstylists" render={ props =>  <Hairstylist {...props} />} />
       <Route path="/Hairstylist/:id" component={Stylist} />
       <Route path="/SignUp" component={SignUp} />
       <Route path="/Login" component={Login} />
