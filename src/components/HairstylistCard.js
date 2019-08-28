@@ -1,27 +1,39 @@
 import React from "react";
 import styled from "styled-components";
-import { StylelistData } from "../StylelistData";
+import {NavLink} from "react-router-dom";
+// import StylelistData from "../StylelistData";
 
 const Card = styled.div`
   display: flex;
   width: 40%;
   padding: 15px 10px;
   color: white;
-  background: black;
+  background: black;  
   border: 2px solid #fffff;
 `;
 
 export default function HairstylistCard(props) {
-  const stylelist = StylelistData[1];
-  console.log(stylelist);
-  // const stylelist = stylelistData.find( stylelists => props.match.params.id === `${stylelists.id}`);
+  const user = props.user;
+  console.log(user);
+
   return (
     <div>
+      <NavLink to={`/Hairstylist/${user.id}`} >
       <Card>
-        <h1>{stylelist.name}</h1>
-        <img src={stylelist.imgUrl} alt={stylelist.name} />
-        <p>{stylelist.description}</p>
+      <div className="user-card-info">
+            <ul key={user.id}>
+              <li>Username: {user.username}</li>
+              <li>Id: {user.id} </li>
+              <li>User Id: {user.user_id} </li>
+              <li>Image url: {user.profile_img}</li>
+              <li>About: {user.about}</li>
+              <li>Skills: {user.skills}</li>
+            </ul>
+            <br />
+            <br />
+          </div>
       </Card>
+      </NavLink>
     </div>
   );
 }

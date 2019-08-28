@@ -31,3 +31,8 @@
     transform: rotate(360deg);
   }
 }
+
+.hairstylist{
+  display: flex;
+  flex-wrap: wrap;
+}

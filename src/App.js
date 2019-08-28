@@ -44,13 +44,13 @@ function App() {
         console.error("handleSubmit: catch: err: ", err);
       });
   }, []);
-  console.log(defaultUser);
+  console.log(stylists);
   return (
     <div className="App container">
       <Nav />
       <header />
       <div>
-        <AppRoute />
+        <AppRoute stylists={stylists} />
       </div>
       <div className="user-info">
         <h1> Users:</h1>
