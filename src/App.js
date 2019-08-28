@@ -44,7 +44,7 @@ function App() {
         console.error("handleSubmit: catch: err: ", err);
       });
   }, []);
-  console.log(stylists);
+  // console.log(stylists);
   return (
     <div className="App container">
       <Nav />

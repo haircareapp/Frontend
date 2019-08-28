@@ -8,7 +8,7 @@ import Hairstylist from "./Hairstylist";
 import Stylist from "./Stylist";
 
 export default function AppRoute(props) {
-  console.log(props.stylists);
+  // console.log(props.stylists);
   return (
     <div>
       {/* <Route path="/Hairstylist" render={(props) =>  <Hairstylist stylists={props.stylists} />} /> */}
