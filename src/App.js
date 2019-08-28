@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-// import logo from './logo.svg';
 import "./App.css";
 import AppRoute from "./components/AppRoute";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import axios from "axios";
 // import SignUp from './components/SignUp';
 // import Hairstylist from './components/Hairstylist';
@@ -62,6 +62,8 @@ function App() {
           </ul>
         </div>
       </div>
+      <Footer />
+      <p className="copyright">Copyright Perlwinkle Hair Care - Privacy Notice - Terms and Conditions - Secured by Lambda - Powered by Lambda Build Week</p>
     </div>
   );
 }
