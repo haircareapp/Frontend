@@ -37,7 +37,7 @@ function App() {
     axios
       .get("https://haircare-backend.herokuapp.com/api/users/1")
       .then(res => {
-        console.log("res: ", res.data.stylist);
+        // console.log("res: ", res.data.stylist);
         setDefaultUser(res.data.stylist);
       })
       .catch(err => {
@@ -80,7 +80,6 @@ function App() {
 
         <h2>Stylist Portfolio Page:</h2>
         <div className="user-portfolio-info">
-          {/* {defaultUser.map(defaultUser => ( */}
           <ul>
             <li>Username: {defaultUser.username}</li>
             <li>Id: {defaultUser.id} </li>
@@ -88,10 +87,35 @@ function App() {
             <li>Image url: {defaultUser.profile_img}</li>
             <li>About: {defaultUser.about}</li>
             <li>Skills: {defaultUser.skills}</li>
-            {/* <li>Portfolio: {defaultUser.portfolio}</li> */}
-            {/* <li>Posts: {defaultUser.posts}</li> */}
           </ul>
-          {/* ))} */}
+          {/* <div>
+            <h3>Portfolio:</h3>
+            {defaultUser.portfolio.map(port => (
+              <div>
+                <h4>Portfolio Snippet #{port.id}:</h4>
+                <ul>
+                  <li>ID:{port.id}</li>
+                  <li>Stylists ID:{port.stylists_id}</li>
+                  <li>Portfolio Image:{port.portfolio_image}</li>
+                </ul>
+              </div>
+            ))}
+          </div> */}
+          {/* <div>
+            <h3>Posts:</h3>
+            {defaultUser.posts.map(post => (
+              <div>
+                <h4>Post Snippet #{post.id}:</h4>
+                <ul>
+                  <li>ID: {post.id}</li>
+                  <li>Stylists ID: {post.stylists_id}</li>
+                  <li>Title: {post.title}</li>
+                  <li>Description: {post.description}</li>
+                  <li>Post Image: {post.posts_image}</li>
+                </ul>
+              </div>
+            ))}
+          </div> */}
         </div>
       </div>
     </div>
