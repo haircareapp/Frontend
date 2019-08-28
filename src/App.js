@@ -38,7 +38,7 @@ function App() {
       .get("https://haircare-backend.herokuapp.com/api/users/1")
       .then(res => {
         console.log("res: ", res.data.stylist);
-        setDefaultUser([res.data.stylist]);
+        setDefaultUser(res.data.stylist);
       })
       .catch(err => {
         console.error("handleSubmit: catch: err: ", err);
@@ -88,8 +88,8 @@ function App() {
             <li>Image url: {defaultUser.profile_img}</li>
             <li>About: {defaultUser.about}</li>
             <li>Skills: {defaultUser.skills}</li>
-            <li>Portfolio: {defaultUser.portfolio}</li>
-            <li>Posts: {defaultUser.posts}</li>
+            {/* <li>Portfolio: {defaultUser.portfolio}</li> */}
+            {/* <li>Posts: {defaultUser.posts}</li> */}
           </ul>
           {/* ))} */}
         </div>
