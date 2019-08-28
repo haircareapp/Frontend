@@ -1,0 +1,18 @@
+.container{
+    .NavLink{
+        text-decoration: none;
+        color: black;
+        margin: 10%;
+    }
+    .user-card-info {
+        ul{
+            list-style-type: none;
+        li{
+            padding: 5px;
+        }
+        .skills{
+            font-weight: bold;
+        }
+        }
+    }
+}

@@ -19,8 +19,8 @@ function Hairstylist() {
   
   return(
     <div className="user-info">
-        <h1> Users:</h1>
-        <h2>Stylist Users:</h2>
+        <h1> Stylist</h1>
+        <h2>List of Stylist in your area</h2>
         {stylists.map(user => (
           <HairstylistCard user={user} />
         ))}

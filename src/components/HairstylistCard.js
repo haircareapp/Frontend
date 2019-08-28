@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
+
+import "../stylistCard.scss";
 // import StylelistData from "../StylelistData";
 
 const Card = styled.div`
-  display: flex;
   width: 40%;
   padding: 15px 10px;
-  color: white;
-  background: black;  
-  border: 2px solid #fffff;
+  margin: 0 auto;
+  color: black;  
+  border: 1px solid grey;
+  border-radius: 3px;
+  box-shadow: 2px 4px black;
 `;
 
 export default function HairstylistCard(props) {
@@ -17,20 +20,18 @@ export default function HairstylistCard(props) {
   console.log(user);
 
   return (
-    <div>
-      <NavLink to={`/Hairstylist/${user.id}`} >
+    <div className="container">
+      <NavLink className="NavLink" to={`/Hairstylist/${user.id}`} >
       <Card>
       <div className="user-card-info">
             <ul key={user.id}>
-              <li>Username: {user.username}</li>
-              <li>Id: {user.id} </li>
-              <li>User Id: {user.user_id} </li>
               <li>Image url: {user.profile_img}</li>
-              <li>About: {user.about}</li>
-              <li>Skills: {user.skills}</li>
+              <li><h2>Name: {user.username}</h2></li>
+              {/* <li>Id: {user.id} </li>
+              <li>User Id: {user.user_id} </li> */}
+              <li> {user.about}</li>
+              <li className="skills">Skills: {user.skills}</li>
             </ul>
-            <br />
-            <br />
           </div>
       </Card>
       </NavLink>
