@@ -8,18 +8,43 @@ import axios from "axios";
 // import Hairstylist from './components/Hairstylist';
 
 function App() {
+  const [stylists, setStylists] = useState([]);
   const [users, setUsers] = useState([]);
+  const [defaultUser, setDefaultUser] = useState([]);
   useEffect(() => {
     axios
       .get("https://haircare-backend.herokuapp.com/api/users")
       .then(res => {
-        console.log("res: ", res);
-        setUsers(res.data.users);
+        // console.log("res: ", res);
+        setStylists(res.data.users);
       })
       .catch(err => {
         console.error("handleSubmit: catch: err: ", err);
       });
   }, []);
+  useEffect(() => {
+    axios
+      .get("https://haircare-backend.herokuapp.com/api/users/all")
+      .then(res => {
+        // console.log("res: ", res);
+        setUsers(res.data.all);
+      })
+      .catch(err => {
+        console.error("handleSubmit: catch: err: ", err);
+      });
+  }, []);
+  useEffect(() => {
+    axios
+      .get("https://haircare-backend.herokuapp.com/api/users/1")
+      .then(res => {
+        console.log("res: ", res.data.stylist);
+        setDefaultUser([res.data.stylist]);
+      })
+      .catch(err => {
+        console.error("handleSubmit: catch: err: ", err);
+      });
+  }, []);
+  console.log(defaultUser);
   return (
     <div className="App container">
       <Nav />
@@ -28,8 +53,9 @@ function App() {
         <AppRoute />
       </div>
       <div className="user-info">
-        <h1>Users:</h1>
-        {users.map(user => (
+        <h1> Users:</h1>
+        <h2>Stylist Users:</h2>
+        {stylists.map(user => (
           <div className="user-card-info">
             <ul key={user.id}>
               <li>Username: {user.username}</li>
@@ -43,6 +69,30 @@ function App() {
             <br />
           </div>
         ))}
+        <h2>All Users:</h2>
+        <div className="user-list-info">
+          <ul>
+            {users.map(user => (
+              <li key={user.email}>Email: {user.email}</li>
+            ))}
+          </ul>
+        </div>
+
+        <h2>Stylist Portfolio Page:</h2>
+        <div className="user-portfolio-info">
+          {/* {defaultUser.map(defaultUser => ( */}
+          <ul>
+            <li>Username: {defaultUser.username}</li>
+            <li>Id: {defaultUser.id} </li>
+            <li>User Id: {defaultUser.user_id} </li>
+            <li>Image url: {defaultUser.profile_img}</li>
+            <li>About: {defaultUser.about}</li>
+            <li>Skills: {defaultUser.skills}</li>
+            <li>Portfolio: {defaultUser.portfolio}</li>
+            <li>Posts: {defaultUser.posts}</li>
+          </ul>
+          {/* ))} */}
+        </div>
       </div>
     </div>
   );
