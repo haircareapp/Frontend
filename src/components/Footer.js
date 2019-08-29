@@ -1,10 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-<<<<<<< HEAD
-import {NavLink} from "react-router-dom";
-import "../stylistCard.scss";
-=======
->>>>>>> 7f4c97c5696ec8465e87c277c398ef8a38202899
 
 const FooterDiv = styled.div`
     background: #568EA3;
@@ -31,17 +26,10 @@ export default function Footer() {
                 <h3>About Periwinkle Hair Care</h3>
                 <p>Cupcake ipsum dolor sit. Amet gummi bears wafer apple pie caramels sweet. I love pastry jujubes gingerbread chocolate cake lemon drops sesame snaps topping. Toffee candy canes halvah pudding sweet roll apple pie. Dragée fruitcake gingerbread brownie lemon drops toffee danish. Danish gummies biscuit I love. Chupa chups caramels pudding liquorice I love. Toffee I love fruitcake gingerbread.</p>
                 <div>
-<<<<<<< HEAD
-                    <ul className="About-list">
-                        <li><NavLink>Contact Us</NavLink></li>
-                        <li><NavLink>FAQs</NavLink></li>
-                        <li><NavLink>Read more about us.</NavLink></li>
-=======
                     <ul>
                         <li><a href="#">Contact Us</a></li>
                         <li><a href="#">FAQs</a></li>
                         <li><a href="#">Read more about us</a></li>
->>>>>>> 7f4c97c5696ec8465e87c277c398ef8a38202899
                     </ul>
                 </div>   
             </ContainerA>
