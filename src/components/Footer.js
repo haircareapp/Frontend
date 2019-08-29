@@ -13,15 +13,25 @@ const FooterDiv = styled.div`
         align-items: center;
     }
     justify-content: space-around;
+    box-sizing: border-box;
 `;
 const ContainerA = styled.div`
+    box-sizing: border-box;
     padding: 20px;
     width: 50%;
-
+    @media (max-width: 800px){
+        width:100%;
+        padding: 20px;
+    }
 `;
 const NewsLetter = styled.div`
+    box-sizing: border-box;
     padding: 20px;
     width: 40%;
+    @media (max-width: 800px){
+        width:100%;
+        padding: 20px;
+    }
 
 `;
 

@@ -4,13 +4,18 @@ import { NavLink } from "react-router-dom";
 import "../stylistCard.scss";
 
 const Card = styled.div`
-  width: 40%;
+  width: 400px;
+  height: 450px;
   padding: 15px 10px;
-  margin: 0 auto;
-  color: black;
-  border: 1px solid grey;
+  margin: 15px;
+  color: #393939;
   border-radius: 3px;
-  box-shadow: 2px 4px black;
+  box-shadow: 2px 3px 5px #4a4a4a;
+  @media(max-width: 431px){
+    width: 380px;
+    height: 430px;
+    padding: 10px;
+  }
 `;
 
 export default function HairstylistCard(props) {
@@ -33,18 +38,15 @@ export default function HairstylistCard(props) {
           <div>
             <img className="card-img" src={image.img_url} alt="profile" />
           </div>
-
           <div className="user-card-info">
-            <ul key={user.id}>
+            <div key={user.id}>
               {/* <li>Image url: {user.profile_img}</li> */}
-              <li>
-                <h2>Name: {user.username}</h2>
-              </li>
+                <h2>{user.username}</h2>
               {/* <li>Id: {user.id} </li>
               <li>User Id: {user.user_id} </li> */}
-              <li> {user.about}</li>
-              <li className="skills">Skills: {user.skills}</li>
-            </ul>
+              <p> {user.about}</p>
+              <p className="skills">Skills: {user.skills}</p>
+            </div>
           </div>
       </NavLink>
         </Card>

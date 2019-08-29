@@ -1,21 +1,42 @@
 .container{
+    box-sizing: border-box;
+    color: #393939;
+
     .NavLink{
+        display: flex;
+        flex-direction: column;
         text-decoration: none;
-        color: black;
-        margin: 10%;
+        color: #393939;
+
         .card-img{
-            width:100%;
+            width: 100%;
+            max-width: 350px;
+            max-height: 250px;
+            // min-height: 300px;
+            // min-width: 400px;
         }
         .user-card-info {
-            ul{
-                list-style-type: none;
-                li{
+            div{
+                padding: 0 20px;
+                h2{
                     padding: 5px;
+                }
+                p{
+                    text-align: left;
                 }
                 .skills{
                     font-weight: bold;
                 }
             }
         }
+        @media(max-width: 431px){
+            flex-direction: column-reverse;
+            padding: 5px;
+        }
     }
+}
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
