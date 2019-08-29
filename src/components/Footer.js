@@ -34,17 +34,10 @@ export default function Footer() {
                 <h3>About Periwinkle Hair Care</h3>
                 <p>Cupcake ipsum dolor sit. Amet gummi bears wafer apple pie caramels sweet. I love pastry jujubes gingerbread chocolate cake lemon drops sesame snaps topping. Toffee candy canes halvah pudding sweet roll apple pie. Dragée fruitcake gingerbread brownie lemon drops toffee danish. Danish gummies biscuit I love. Chupa chups caramels pudding liquorice I love. Toffee I love fruitcake gingerbread.</p>
                 <div>
-<<<<<<< HEAD
                     <ul className="decor">
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Read more about us</a></li>
-=======
-                    <ul>
                         <li><a href="https://haircareapp.netlify.com/">Contact Us</a></li>
                         <li><a href="https://haircareapp.netlify.com/">FAQs</a></li>
                         <li><a href="https://haircareapp.netlify.com/">Read more about us</a></li>
->>>>>>> 2b4fba14c5c0e1b16f364017ed7c89f5dd1c9fcf
                     </ul>
                 </div>   
             </ContainerA>
