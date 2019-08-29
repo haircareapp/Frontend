@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 import * as yup from "yup";
 import "../Form.scss";
 import loginPhoto from "../photos/loginPhoto.jpg";
@@ -24,6 +24,7 @@ const LoginForm = ({ errors, touched, values, status }) => {
           <label>
             Email
             <Field
+              autoComplete="email"
               component="input"
               type="email"
               name="email"
@@ -37,7 +38,12 @@ const LoginForm = ({ errors, touched, values, status }) => {
           <br />
           <label>
             Password
-            <Field type="password" name="password" placeholder="Password" />
+            <Field
+              autoComplete="password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
           </label>
           <br />
           {touched.password && errors.password && (
@@ -75,18 +81,23 @@ const formikHOC = withFormik({
         password: values.password
       })
       .then(res => {
-        console.log("handleSubmit: then: res: ", res);
+        // console.log("handleSubmit: then: res: ", res);
         setStatus(res.data.message);
-        console.log(res.data.token);
         resetForm();
+        setTimeout(function() {
+          window.location.href = "/Hairstylists";
+          return;
+        }, 2000);
+        // this.props.history.push("/Hairstylists");
         // alert(`Welcome back to the hair club, ${res.data.email}!`);
-        })
+      })
       .catch(err => {
         // console.log(values.email, values.password);
         console.error("handleSubmit: catch: err: ", err);
+        setStatus("That's not a valid user");
       });
   }
 });
 const LoginFormWithFormik = formikHOC(LoginForm);
 
-export default LoginFormWithFormik;
+export default withRouter(LoginFormWithFormik);

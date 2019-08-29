@@ -47,6 +47,7 @@ export default function HairstylistCard(props) {
               <p> {user.about}</p>
               <p className="skills">Skills: {user.skills}</p>
             </div>
+            <button>More about {user.username}</button>
           </div>
       </NavLink>
         </Card>

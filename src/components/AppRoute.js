@@ -12,7 +12,7 @@ export default function AppRoute() {
   return (
     <div>
       <Route exact path="/" component={Home} />
-      <Route path="/Hairstylists" component={Hairstylist} />
+      <Route path="/Hairstylists" component={Hairstylist} />      
       <Route path="/Hairstylist/:id" component={Stylist} />
       <Route path="/SignUp" component={SignUp} />
       <Route path="/Login" component={Login} />

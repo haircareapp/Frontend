@@ -1,41 +1,64 @@
-.container{
+.container {
     box-sizing: border-box;
     color: #393939;
 
-    .NavLink{
+    .NavLink {
         display: flex;
         flex-direction: column;
         text-decoration: none;
         color: #393939;
 
-        .card-img{
+        .card-img {
             width: 100%;
             max-width: 350px;
             max-height: 250px;
             // min-height: 300px;
             // min-width: 400px;
         }
+
         .user-card-info {
-            div{
+            div {
                 padding: 0 20px;
-                h2{
+
+                h2 {
                     padding: 5px;
                 }
-                p{
+
+                p {
                     text-align: left;
                 }
-                .skills{
+
+                .skills {
                     font-weight: bold;
                 }
             }
+
+            button {
+                background: #68c3d4;
+                color: white;
+                border: none;
+                border-radius: 4px;
+
+                &:hover {
+                    border: 2px solid gray;
+                }
+
+                &:active {
+                    border: none;
+                    background: white;
+                    color: black;
+                }
+            }
         }
-        @media(max-width: 431px){
+
+        @media(max-width: 431px) {
             flex-direction: column-reverse;
             padding: 5px;
         }
     }
 }
-.flex-container{
+
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

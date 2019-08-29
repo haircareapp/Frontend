@@ -15,6 +15,11 @@ function Hairstylist() {
       })
       .catch(err => {
         console.error("handleSubmit: catch: err: ", err);
+        if (err.response.status === 401) {
+          alert("Please login to view our Hairstylists in your area.");
+          window.location.href = "/Login";
+          return;
+        }
       });
   }, []);
   useEffect(() => {
@@ -31,12 +36,11 @@ function Hairstylist() {
 
   return (
     <div className="user-info">
-      <h1> Stylist</h1>
-      <h2>List of Stylist in your area</h2>
+      <h1> Stylists in your area</h1>
       <div className="flex-container">
-      {stylists.map(user => (
-        <HairstylistCard user={user} images={images} />
-      ))}
+        {stylists.map(user => (
+          <HairstylistCard user={user} images={images} />
+        ))}
       </div>
     </div>
   );

@@ -41,6 +41,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
             Username
             <br />
             <Field
+              autoComplete="username"
               component="input"
               type="text"
               name="username"
@@ -56,6 +57,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
             Email
             <br />
             <Field
+              autoComplete="email"
               component="input"
               type="email"
               name="email"
@@ -71,6 +73,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
             Zip Code
             <br />
             <Field
+              autoComplete="zipcode"
               component="input"
               type="text"
               pattern="[0-9]{5}"
@@ -86,7 +89,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
           <label>
             Password
             <br />
-            <Field type="password" name="password" placeholder="Password" />
+            <Field autoComplete="password" type="password" name="password" placeholder="Password" />
           </label>
           <br />
           {touched.password && errors.password && (
