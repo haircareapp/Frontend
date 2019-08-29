@@ -4,6 +4,7 @@ import axios from "axios";
 import * as yup from "yup";
 import "../Form.scss";
 import resetPhoto from "../photos/resetPhto.jpg";
+
 const ResetForm = ({ errors, touched, values, status }) => {
   return (
     <div className="main">
@@ -44,7 +45,7 @@ const ResetForm = ({ errors, touched, values, status }) => {
             <p className="error">{errors.username}</p>
           )}
           <br />
-          <button>Submit!</button>
+          <button type="submit">Submit!</button>
         </Form>
       </div>
     </div>
@@ -59,8 +60,8 @@ const formikHOC = withFormik({
     };
   },
   validationSchema: yup.object().shape({
-    email: yup.string().required("Not a valid email address"),
-    username: yup.string().required("Not a valid username")
+    email: yup.string().required("Please usa a valid email address"),
+    username: yup.string().required("That username does not exist")
   }),
   handleSubmit(values, { resetForm }) {
     axios
@@ -71,6 +72,7 @@ const formikHOC = withFormik({
         alert(
           `${res.data.username}, we have sent an email to, ${res.data.email}! Please check your spam folder and make sure our email from support@haircare.com is not flagged. Follow the link in our email to reset your password and get back in the hair game!`
         );
+        window.location.href = "/";
       })
       .catch(err => console.error("handleSubmit: catch: err: ", err));
   }

@@ -24,6 +24,7 @@ const LoginForm = ({ errors, touched, values, status }) => {
           <label>
             Email
             <Field
+              autoComplete="email"
               component="input"
               type="email"
               name="email"
@@ -37,7 +38,12 @@ const LoginForm = ({ errors, touched, values, status }) => {
           <br />
           <label>
             Password
-            <Field type="password" name="password" placeholder="Password" />
+            <Field
+              autoComplete="password"
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
           </label>
           <br />
           {touched.password && errors.password && (
@@ -75,10 +81,13 @@ const formikHOC = withFormik({
         password: values.password
       })
       .then(res => {
-        console.log("handleSubmit: then: res: ", res);
+        // console.log("handleSubmit: then: res: ", res);
         setStatus(res.data.message);
-        console.log(res.data.token);
         resetForm();
+        setTimeout(function() {
+          window.location.href = "/Hairstylists";
+          return;
+        }, 2000);
         // this.props.history.push("/Hairstylists");
         // alert(`Welcome back to the hair club, ${res.data.email}!`);
       })

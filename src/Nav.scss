@@ -8,6 +8,16 @@
   .title {
     font-size: 3rem;
     color: #68c3d4;
+
+    a,
+    NavLink {
+      text-decoration: none;
+      color: #68c3d4;
+
+      &:hover {
+        color: lightgray;
+      }
+    }
   }
 
   nav {
@@ -15,16 +25,32 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 1.5rem;
 
-    div {
+    .nav-item {
 
       a {
         text-decoration: none;
         color: black;
+      }
 
-        &:hover {
-          color: white;
+      &:hover {
+
+        &,
+        a {
+          color: lightgray;
         }
+      }
+
+    }
+  }
+
+  @media only screen and (max-width: 665px) {
+    nav {
+      font-size: 14px;
+
+      .divider {
+        display: none;
       }
     }
   }
@@ -39,9 +65,10 @@
       align-items: flex-start;
       flex-direction: column;
     }
-.title{
-  width:100%;
-  text-align:center;
-}
+
+    .title {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
