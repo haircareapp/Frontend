@@ -10,7 +10,6 @@ function App() {
     <div className="App container">
       <Nav />
       <div>
-      {/* <Data/> */}
         <AppRoute />
       </div>
       <Footer />
