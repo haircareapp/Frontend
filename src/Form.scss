@@ -1,7 +1,7 @@
 .main {
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-start;
   max-width: 1100px;
   margin: 0 auto;
 
@@ -9,13 +9,14 @@
     width: 50vw;
 
     img {
-      height: 100vh;
+      height: 80vh;
       width: 100%;
     }
   }
 
   .form {
     width: 50vw;
+    padding-bottom:10px;
 
     h1 {
       font-family: Athelas, Arial, Helvetica, sans-serif;

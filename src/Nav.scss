@@ -1,17 +1,47 @@
-nav {
+.header {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin:10px;
+  margin: 10px;
   padding: 10px 15px;
-div{
-  
-  a{
-text-decoration: none;
-color:black;
-&:hover{
-  color:white;
+
+  .title {
+    font-size: 3rem;
+    color: #68c3d4;
+  }
+
+  nav {
+    width: 80vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    div {
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+
+
+
+
+    &,
+    nav {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+.title{
+  width:100%;
+  text-align:center;
 }
   }
-}
 }
