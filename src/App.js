@@ -3,6 +3,7 @@ import "./App.css";
 import AppRoute from "./components/AppRoute";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+// import Data from "./components/Data";
 
 function App() {
   return (
