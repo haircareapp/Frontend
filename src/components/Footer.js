@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import {NavLink} from "react-router-dom";
 
 const FooterDiv = styled.div`
     background: #568EA3;
@@ -28,9 +27,9 @@ export default function Footer() {
                 <p>Cupcake ipsum dolor sit. Amet gummi bears wafer apple pie caramels sweet. I love pastry jujubes gingerbread chocolate cake lemon drops sesame snaps topping. Toffee candy canes halvah pudding sweet roll apple pie. Dragée fruitcake gingerbread brownie lemon drops toffee danish. Danish gummies biscuit I love. Chupa chups caramels pudding liquorice I love. Toffee I love fruitcake gingerbread.</p>
                 <div>
                     <ul>
-                        <li><NavLink>Contact Us</NavLink></li>
-                        <li><NavLink>FAQs</NavLink></li>
-                        <li><NavLink>Read more about us.</NavLink></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Read more about us</a></li>
                     </ul>
                 </div>   
             </ContainerA>

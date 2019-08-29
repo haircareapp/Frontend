@@ -17,7 +17,7 @@ const Card = styled.div`
 
 export default function HairstylistCard(props) {
   const user = props.user;
-  console.log(user);
+  // console.log(user);
 
   return (
     <div className="container">

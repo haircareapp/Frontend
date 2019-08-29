@@ -1,7 +1,6 @@
 import React, {useState , useEffect} from "react";
 import axios from "axios";
 import HairstylistCard from './HairstylistCard';
-// import StylelistData from "../StylelistData";
 
 function Hairstylist() {
   const [stylists, setStylists] = useState([]);
