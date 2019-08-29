@@ -10,7 +10,7 @@ const SignUpForm = ({ errors, touched, values, status }) => {
   const [message, setMessage] = useState("");
   useEffect(() => {
     if (status) {
-      setMessage([...message, status]);
+      setMessage([status]);
     }
   }, [status]);
   return (

@@ -3,12 +3,14 @@ import "./App.css";
 import AppRoute from "./components/AppRoute";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+// import Data from "./components/Data";
 
 function App() {
   return (
     <div className="App container">
       <Nav />
       <div>
+      {/* <Data/> */}
         <AppRoute />
       </div>
       <Footer />
