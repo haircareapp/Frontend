@@ -16,12 +16,25 @@ function Hairstylist() {
       });
   }, []);
   
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`./StylistData.json`)
+      .then(res => {
+        // console.log("res: ", res.data);
+        setImages(res.data);
+      })
+      .catch(err => {
+        console.error("handleSubmit: catch: err: ", err);
+      });
+  }, []);
+
   return(
     <div className="user-info">
         <h1> Stylist</h1>
         <h2>List of Stylist in your area</h2>
         {stylists.map(user => (
-          <HairstylistCard user={user} />
+          <HairstylistCard user={user} images={images}/>
         ))}
         </div>
   )

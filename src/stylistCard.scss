@@ -3,16 +3,19 @@
         text-decoration: none;
         color: black;
         margin: 10%;
-    }
-    .user-card-info {
-        ul{
-            list-style-type: none;
-        li{
-            padding: 5px;
+        .card-img{
+            width:100%;
         }
-        .skills{
-            font-weight: bold;
-        }
+        .user-card-info {
+            ul{
+                list-style-type: none;
+                li{
+                    padding: 5px;
+                }
+                .skills{
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
