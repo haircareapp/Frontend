@@ -62,10 +62,10 @@ export default function Stylist(props) {
         <h3>Portfolio:</h3>
         {portfolio.map(port => (
           <div>
-            <h4>Portfolio Snippet #{port.id}:</h4>
+            <h4>Project {port.id}:</h4>
             <ul>
-              <li>ID:{port.id}</li>
-              <li>Stylists ID:{port.stylists_id}</li>
+              {/* <li>ID:{port.id}</li> */}
+              {/* <li>Stylists ID:{port.stylists_id}</li> */}
               <li>Portfolio Image:{port.portfolio_image}</li>
             </ul>
           </div>
@@ -75,11 +75,10 @@ export default function Stylist(props) {
         <h3>Posts:</h3>
         {posts.map(post => (
           <div>
-            <h4>Post Snippet #{post.id}:</h4>
+            <h4>{post.title}</h4>
             <ul>
-              <li>ID: {post.id}</li>
-              <li>Stylists ID: {post.stylists_id}</li>
-              <li>Title: {post.title}</li>
+              {/* <li>ID: {post.id}</li> */}
+              {/* <li>Stylists ID: {post.stylists_id}</li> */}
               <li>Description: {post.description}</li>
               <li>Post Image: {post.posts_image}</li>
             </ul>
