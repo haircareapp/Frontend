@@ -109,8 +109,6 @@ export default function Stylist(props) {
           ))}
         </div>
       </div>
-      </div>
-      </div>
     </div>
   );
 }
