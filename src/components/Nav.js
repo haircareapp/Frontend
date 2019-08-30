@@ -14,7 +14,7 @@ export default function Nav() {
   return (
     <div className="header">
       <div className="title">
-        <NavLink to="/SignUp">PWHC</NavLink>
+        <NavLink to="/">PWHC</NavLink>
       </div>
       <nav>
         <div className="nav-item">
