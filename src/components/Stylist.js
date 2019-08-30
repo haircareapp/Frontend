@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../stylistCard.scss";
 // import styled from "styled-components";
 
 export default function Stylist(props) {
@@ -47,43 +48,47 @@ export default function Stylist(props) {
 
   return (
     <div className="user-portfolio-info">
-      <h2>{defaultUser.username}</h2>
-      <div>
+      <div className="portfolio-container">
+      <h1>{defaultUser.username}</h1>
+      <div className="img-div">
         <img src={pic.img_url} alt={defaultUser.username} />
-        <ul>
+      </div>
+      <div className="Description">
           {/* <li>Username: {defaultUser.username}</li> */}
           {/* <li>Id: {defaultUser.id} </li> */}
           {/* <li>User Id: {defaultUser.user_id} </li> */}
-          <li>About: {defaultUser.about}</li>
-          <li>Skills: {defaultUser.skills}</li>
-        </ul>
+          <p>{defaultUser.about}</p>
+          <h3>Skills: {defaultUser.skills}</h3>
       </div>
+      <div className="p-content">
       <div>
-        <h3>Portfolio:</h3>
+        <h3>Portfolio</h3>
         {portfolio.map(port => (
-          <div>
+          <div className="post-img">
             <h4>Project {port.id}:</h4>
             <ul>
               {/* <li>ID:{port.id}</li> */}
               {/* <li>Stylists ID:{port.stylists_id}</li> */}
-              <li>Portfolio Image:{port.portfolio_image}</li>
+              <li><img src={port.portfolio_image} alt={defaultUser.username} /></li>
             </ul>
           </div>
         ))}
       </div>
       <div>
-        <h3>Posts:</h3>
+        <h3>Posts</h3>
         {posts.map(post => (
-          <div>
+          <div className="post-img">
             <h4>{post.title}</h4>
             <ul>
               {/* <li>ID: {post.id}</li> */}
               {/* <li>Stylists ID: {post.stylists_id}</li> */}
-              <li>Description: {post.description}</li>
-              <li>Post Image: {post.posts_image}</li>
+              <li>{post.description}</li>
+              <li><img src={post.posts_image} alt={defaultUser.username} /></li>
             </ul>
           </div>
         ))}
+      </div>
+      </div>
       </div>
     </div>
   );
