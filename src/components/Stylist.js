@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../stylistCard.scss";
 // import styled from "styled-components";
 import "../stylist.scss";
 
@@ -107,6 +108,8 @@ export default function Stylist(props) {
             </div>
           ))}
         </div>
+      </div>
+      </div>
       </div>
     </div>
   );
