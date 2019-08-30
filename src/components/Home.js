@@ -13,7 +13,7 @@ export default function Home() {
       .catch(err => {
         console.error("handleSubmit: catch: err: ", err);
         if (err.response.status === 401) {
-          window.location.href = "/Login";
+          // window.location.href = "/";
           return;
         }
       });
@@ -33,5 +33,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }
